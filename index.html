@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Projetos de Consultoria Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --navy:#0B2340; --navy-2:#0F2E52; --line:#1E3A5C;
+  --paper:#FFFFFF; --ink:#0A1725; --slate:#54687E; --slate-soft:#8497A9;
+  --lime:#8CC81E; --erro:#E98078;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--navy); color:var(--paper);
+  font:400 15px/1.55 "IBM Plex Sans",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  display:grid; place-items:center; padding:24px 16px;
+  padding-top:max(24px,env(safe-area-inset-top));
+  padding-bottom:max(24px,env(safe-area-inset-bottom));
+}
+/* malha de planta baixa, discreta */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:46px 46px; opacity:.28;
+  mask-image:radial-gradient(ellipse 80% 65% at 50% 42%,#000 35%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 42%,#000 35%,transparent 100%);
+}
+.tudo{position:relative; width:100%; max-width:430px}
+.kicker{
+  font:500 10px/1 "IBM Plex Mono",monospace; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--lime); margin:0 0 14px; display:flex; align-items:center; gap:9px;
+}
+.kicker::after{content:""; height:1px; flex:1; background:var(--line)}
+h1{
+  font-family:"Archivo",sans-serif; font-weight:800; font-size:27px; line-height:1.18;
+  letter-spacing:-.025em; margin:0 0 6px;
+}
+h1 span{display:block; color:var(--slate-soft); font-weight:600; font-size:16px; letter-spacing:-.01em; margin-top:5px}
+.sub{margin:0 0 26px; font-size:13.5px; line-height:1.55; color:var(--slate-soft)}
+form{
+  background:var(--paper); color:var(--ink); border-radius:14px; padding:22px;
+  box-shadow:0 22px 60px -22px rgba(0,0,0,.7);
+}
+label{display:block; font:600 9.5px/1 "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--slate); margin:0 0 6px}
+input{
+  width:100%; font:500 15px/1 "IBM Plex Mono",monospace; color:var(--ink);
+  background:#F3F7FA; border:1px solid #D3DDE6; border-radius:9px; padding:13px 14px;
+  margin-bottom:15px;
+}
+input:focus{outline:2px solid var(--navy-2); outline-offset:1px; background:#FFF}
+button.entrar{
+  width:100%; font:700 14px/1 "Archivo",sans-serif; letter-spacing:.01em;
+  background:var(--navy-2); color:#FFF; border:0; border-radius:9px; padding:15px; cursor:pointer;
+}
+button.entrar:hover{background:var(--navy)}
+button.entrar:disabled{opacity:.6; cursor:progress}
+button.entrar:focus-visible{outline:3px solid var(--lime); outline-offset:2px}
+.erro{
+  display:none; margin-top:13px; font-size:12.5px; line-height:1.5;
+  color:#B3261E; background:#FCEDEC; border-left:3px solid #B3261E;
+  padding:10px 12px; border-radius:0 7px 7px 0;
+}
+.erro.on{display:block}
+.rodape{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:20px}
+.zap{
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  font:600 13px/1 "Archivo",sans-serif; color:var(--navy);
+  background:var(--lime); border-radius:9px; padding:12px 16px;
+}
+.zap:hover{filter:brightness(1.06)}
+.zap svg{width:15px; height:15px; fill:currentColor}
+.nota{font:400 11.5px/1.5 "IBM Plex Mono",monospace; color:var(--slate-soft)}
+.desk{
+  display:none; margin-top:16px; font-size:12.5px; line-height:1.55;
+  color:var(--paper); background:rgba(140,200,30,.12);
+  border:1px solid rgba(140,200,30,.4); border-radius:10px; padding:12px 14px;
+}
+.desk b{color:var(--lime)}
+@media (max-width:820px){ .desk{display:block} h1{font-size:23px} }
+#quadro{position:fixed; inset:0; width:100%; height:100%; border:0; display:none; background:#FFF; z-index:100}
+</style>
+</head>
+<body>
+
+<div class="tudo" id="portao">
+  <p class="kicker">acesso restrito</p>
+  <h1>Projetos de Consultoria Tech<span>Rafael Souza</span></h1>
+  <p class="sub">Material de trabalho em andamento, com dados operacionais de cliente. O acesso e nominal e o conteudo nao deve ser redistribuido.</p>
+
+  <form id="f" autocomplete="off">
+    <label for="u">Usuario</label>
+    <input id="u" name="u" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+    <label for="p">Senha</label>
+    <input id="p" name="p" type="password" required>
+    <button class="entrar" id="b" type="submit">Entrar</button>
+    <div class="erro" id="e"></div>
+  </form>
+
+  <div class="desk">
+    <b>Voce esta num celular.</b> O diagrama abre aqui, mas foi desenhado para tela grande.
+    No computador da para ver a cadeia inteira de uma vez, sem rolar de lado.
+  </div>
+
+  <div class="rodape">
+    <span class="nota">conteudo cifrado</span>
+    <a class="zap" href="https://wa.me/5544991546678" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+      Falar comigo
+    </a>
+  </div>
+</div>
+
+<iframe id="quadro" title="Mapa de Materiais"></iframe>
+
+<script>
+/* Conteudo cifrado em AES-256-GCM. A chave do conteudo e embrulhada com uma
+   chave derivada da senha por PBKDF2. Sem a senha correta, o payload abaixo
+   nao e legivel nem para quem baixar o arquivo. */
+let COFRE = null;
+
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+async function abrir(usuario, senha){
+  if(!COFRE) COFRE = await (await fetch("v.dat")).json();
+  const u = COFRE.u[usuario.trim().toLowerCase()];
+  if(!u) throw new Error("credencial");
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(senha), "PBKDF2", false, ["deriveKey"]);
+  const kSenha = await crypto.subtle.deriveKey(
+    {name:"PBKDF2", salt:b64(u.s), iterations:COFRE.it, hash:"SHA-256"},
+    base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
+  let chaveBruta;
+  try{
+    chaveBruta = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(u.iv)}, kSenha, b64(u.k));
+  }catch(_){ throw new Error("credencial"); }
+  const kConteudo = await crypto.subtle.importKey("raw", chaveBruta, "AES-GCM", false, ["decrypt"]);
+  const claro = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(COFRE.iv)}, kConteudo, b64(COFRE.d));
+  if(typeof DecompressionStream !== "function") throw new Error("navegador");
+  const fluxo = new Blob([claro]).stream().pipeThrough(new DecompressionStream("gzip"));
+  return await new Response(fluxo).text();
+}
+
+const f=document.getElementById("f"), erro=document.getElementById("e"), botao=document.getElementById("b");
+f.addEventListener("submit", async function(ev){
+  ev.preventDefault();
+  erro.classList.remove("on");
+  botao.disabled=true; botao.textContent="Abrindo...";
+  try{
+    const html = await abrir(document.getElementById("u").value, document.getElementById("p").value);
+    const q=document.getElementById("quadro");
+    q.style.display="block";
+    document.getElementById("portao").style.display="none";
+    q.srcdoc=html;
+  }catch(err){
+    erro.textContent = err && err.message==="credencial"
+      ? "Usuario ou senha nao conferem."
+      : "Nao foi possivel abrir. Este acesso exige um navegador atual (Chrome, Edge, Safari ou Firefox recentes) em conexao segura.";
+    erro.classList.add("on");
+    botao.disabled=false; botao.textContent="Entrar";
+    document.getElementById("p").select();
+  }
+});
+</script>
+</body>
+</html>
